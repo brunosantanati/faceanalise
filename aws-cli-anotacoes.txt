@@ -1,0 +1,58 @@
+BAIXAR INSTALADOR OU ZIP DO PYTHON PARA WINDOWS
+
+https://www.python.org/downloads/windows/
+
+O instalador instalou em:
+C:\Users\myuser\AppData\Local\Programs\Python\Python39\python.exe
+
+====================================
+INSTALAR BOTO3 NO PYCHARM
+
+1-Press Ctr + Alt + s.
+2-On left, Project <your project here> > Project Interpreter.
+3-On right, click on +
+4-At the top, search for boto3.
+5-At the bottom, click on Install Package.
+
+====================================
+ARQUIVOS CONFIG E CREDENTIALS
+
+C:\Users\myuser\.aws\config
+
+[default]
+region = us-east-2
+
+C:\Users\myuser\.aws\credentials
+
+[default]
+aws_access_key_id = xxxxxxxxxxxxxxxxxxxxx
+aws_secret_access_key = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+====================================
+AWS CLI
+
+INSTALAÇÃO DO AWS CLI
+https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install.html
+
+INSTALAÇÃO VERSÃO 2
+https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html
+
+INSTALAÇÃO V2 NO WINDOWS
+https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2-windows.html
+https://awscli.amazonaws.com/AWSCLIV2.msi
+
+INSTALAÇÃO V2 DOCKER
+https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2-docker.html
+
+VER VERSÃO
+aws --version
+
+MANDAR IMAGENS PARA O S3
+aws s3 sync . s3://face-analise-imagens
+
+VER COLLECTION NO REKOGNITION
+aws rekognition list-collections
+
+LISTAR AS FACES DA COLLECTION
+aws rekognition list-faces --collection-id faces
+aws rekognition list-faces --collection-id faces | grep ExternalImageId
