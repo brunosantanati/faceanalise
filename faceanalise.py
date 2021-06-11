@@ -3,7 +3,6 @@ Face Análise 1.0 - Ricardo Merces
 twitter @r_merces
 '''
 
-
 import boto3
 import json
 
@@ -17,8 +16,8 @@ def detecta_faces():
         ExternalImageId='TEMPORARIA',
         Image={
             'S3Object': {
-                'Bucket': 'fa-imagens',  #Alterar o nome do BUCKET !
-                'Name': '_analise.png',
+                'Bucket': 'face-analise-imagens',
+                'Name': '_analise.jpg',
            },
         },
     )
@@ -55,7 +54,7 @@ def gera_dados_json(resultado_comparacao):
     return dados_json
 
 def publica_dados(dados_json):
-    arquivo = s3.Object('fa-site', 'dados.json')   #Alterar o nome do BUCKET !
+    arquivo = s3.Object('face-analise-arquivos-site', 'dados.json')
     arquivo.put(Body=json.dumps(dados_json))
 
 def exclui_imagem_colecao(faceId_detectadas):
@@ -72,3 +71,6 @@ def main(event, context):
     publica_dados(dados_json)
     exclui_imagem_colecao(faceId_detectadas)
     print(json.dumps(dados_json, indent=4))
+
+# Chamada do main apenas para teste local. Apagar quando for rodar no Lambda.
+main("", "")
