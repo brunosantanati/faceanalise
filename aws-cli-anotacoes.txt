@@ -49,6 +49,7 @@ aws --version
 
 MANDAR IMAGENS PARA O S3
 aws s3 sync . s3://face-analise-imagens
+aws s3 sync . s3://breaking-bad-bucket
 
 VER COLLECTION NO REKOGNITION
 aws rekognition list-collections
@@ -56,3 +57,5 @@ aws rekognition list-collections
 LISTAR AS FACES DA COLLECTION
 aws rekognition list-faces --collection-id faces
 aws rekognition list-faces --collection-id faces | grep ExternalImageId
+aws rekognition list-faces --collection-id faces-breaking-bad
+aws rekognition list-faces --collection-id faces-breaking-bad | findstr ExternalImageId
