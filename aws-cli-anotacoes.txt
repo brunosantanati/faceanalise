@@ -44,6 +44,11 @@ https://awscli.amazonaws.com/AWSCLIV2.msi
 INSTALAÇÃO V2 DOCKER
 https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2-docker.html
 
+SETAR CREDENCIAIS
+aws configure set aws_access_key_id <access_key>
+aws configure set aws_secret_access_key <secret_key>
+https://docs.aws.amazon.com/cli/latest/reference/configure/set.html#examples
+
 VER VERSÃO
 aws --version
 
@@ -61,3 +66,15 @@ aws rekognition list-faces --collection-id faces | grep ExternalImageId
 aws rekognition list-faces --collection-id faces-breaking-bad
 aws rekognition list-faces --collection-id faces-breaking-bad | findstr ExternalImageId
 aws rekognition list-faces --collection-id faces-familia
+
+CRIAR COLLECTION
+aws rekognition create-collection --collection-id "collectionname"
+https://docs.aws.amazon.com/rekognition/latest/dg/create-collection-procedure.html
+
+DELETAR COLLECTION
+aws rekognition delete-collection --collection-id "collectionname"
+https://docs.aws.amazon.com/rekognition/latest/dg/delete-collection-procedure.html
+
+DESCRIBE COLLECTION
+aws rekognition describe-collection --collection-id collectionname
+https://docs.aws.amazon.com/rekognition/latest/dg/describe-collection-procedure.html                           
